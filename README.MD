@@ -14,7 +14,7 @@ go test
 Alternatively, you can also run the command from the project root.
 
 ```sh
-go test ./days/day_xx/
+go test ./year/day_xx/
 ```
 
 ### Input Files
@@ -29,10 +29,6 @@ You can compile code and run with the actual input if all the tests pass. For th
 go build .
 ```
 
-```sh
-go build .
-```
-
 To run the solution, you need to provide a few extra arguments.
 * the `--year` flag must be set to specify which year's solution should run
 * the `--day` flag must be set to specify which day's solution should run
@@ -42,7 +38,5 @@ To run the solution, you need to provide a few extra arguments.
 And now the complete command:
 
 ```sh
-./advent_of_code_go_template --day x --input path_to_input --mode 1
-# or
 go run . --year y --day x --input path_to_input --mode 1
 ```
