@@ -2,3 +2,8 @@
 name = "advent-of-code"
 version = "0.1.0"
 description = "Advent of code solutions for mchieco"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.1",
+]
