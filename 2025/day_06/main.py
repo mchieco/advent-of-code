@@ -2,6 +2,7 @@ import pathlib
 import sys
 from collections import defaultdict
 import math
+from itertools import zip_longest
 
 def parse_data(puzzle_input: str):
     return puzzle_input.split("\n")
@@ -26,7 +27,21 @@ def part1(data: list[str]) -> int:
 
 def part2(data: list[str]) -> int:
     ans = 0
-
+    
+    problems = []
+    for line in data:
+        problems.append(list(line))
+    
+    current_problem = [] 
+    for i in reversed(list(zip_longest(*problems, fillvalue=" "))):
+        if all(x == " " for x in i):
+            current_problem = []
+        else:
+            current_problem.append(int("".join(i[:-1]).strip())) 
+        if i[-1] == "*":
+            ans += math.prod(current_problem)
+        elif i[-1] == "+":
+            ans += sum(current_problem) 
     return ans
 
 
